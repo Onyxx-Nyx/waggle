@@ -44,17 +44,4 @@ waggle/
 
 Products, prices and ratings are sample data written for this demo. No payments are taken and no orders are delivered. To make it real you would add a backend for products, stock, accounts, payments and orders. Payment providers such as Paystack or Flutterwave are a common choice in Nigeria.
 
-## Ideas for next steps
-
-- Add a backend and database for products and orders
-- Add product detail pages and customer reviews
-- Add user accounts and order history
-- Add real payments with a provider like Paystack
-- Add stock levels and a wishlist
-
-## Publish on GitHub Pages
-
-1. Push the project to a GitHub repository.
-2. Open the repository on GitHub, then go to **Settings** and **Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and the `/ (root)` folder, then save.
-4. After a minute, your site is live at `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
+Built by Onyxx_Nyx
