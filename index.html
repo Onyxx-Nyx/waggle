@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waggle</title>
+  <meta name="description" content="Waggle is a pet store front-end demo built with HTML, CSS and vanilla JavaScript.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%235b4bdb'/%3E%3Ccircle cx='16' cy='21' r='6' fill='%23fff'/%3E%3Ccircle cx='8.5' cy='14' r='3' fill='%23fff'/%3E%3Ccircle cx='13' cy='9.5' r='3' fill='%23fff'/%3E%3Ccircle cx='19' cy='9.5' r='3' fill='%23fff'/%3E%3Ccircle cx='23.5' cy='14' r='3' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="#top">Waggle</a>
+
+    <form class="search" id="search-form" role="search">
+      <label class="sr-only" for="search">Search products</label>
+      <input id="search" type="search" placeholder="Search for food, toys, beds" autocomplete="off">
+    </form>
+
+    <button class="cart-btn" type="button" id="open-cart" aria-label="Cart, 0 items">
+      Cart <span class="badge" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Good things for good pets.</h1>
+        <p class="hero__lede">Food, toys, beds and grooming picks for dogs, cats and fish, delivered to your door.</p>
+        <div class="hero__cta">
+          <button class="btn btn--lime" type="button" data-jump="Dogs">Shop for dogs</button>
+          <button class="btn btn--outline" type="button" data-jump="Cats">Shop for cats</button>
+        </div>
+        <ul class="perks">
+          <li>Free delivery on orders over ₦50,000</li>
+          <li>Pay on delivery available</li>
+        </ul>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <img id="hero-a" alt="" width="400" height="400">
+        <img id="hero-b" alt="" width="400" height="400">
+        <img id="hero-c" alt="" width="400" height="400">
+      </div>
+    </section>
+
+    <section class="shop" id="shop" aria-labelledby="shop-title">
+      <h2 id="shop-title" tabindex="-1">Shop</h2>
+      <p class="shop__summary" id="summary" aria-live="polite"></p>
+
+      <div class="toolbar">
+        <div class="chips" id="chips" role="group" aria-label="Pet"></div>
+
+        <div class="toolbar__controls">
+          <div class="control">
+            <label for="type">Type</label>
+            <select id="type"></select>
+          </div>
+          <div class="control">
+            <label for="sort">Sort by</label>
+            <select id="sort">
+              <option value="recommended">Recommended</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </div>
+          <button class="btn btn--ghost" type="button" id="reset" hidden>Reset filters</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>
+        Nothing matches that search. Try another word, or
+        <button class="link" type="button" id="empty-reset">reset the filters</button>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Waggle is a demo project. Products, prices and ratings are sample data. No payments are taken and no orders are delivered.</p>
+  </footer>
+
+  <p class="sr-only" id="status" role="status"></p>
+
+  <dialog class="drawer" id="cart-dialog" aria-labelledby="cart-title">
+    <div id="cart-body"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
